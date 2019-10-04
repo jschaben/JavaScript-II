@@ -77,22 +77,17 @@ function multiplyNums(x, y, cb) {
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-
-present = 0;
-for(i = 0; i < list.length; i++) {
-  if (list[i] === item) {
-    present += 1;
+if (list.includes(item)){
+  return cb(true);
   }
-} if (present > 0) {
-  cb(true)
-} else {
-  cb(false)
-}
+  else{
+  return cb(false);
+  }
 }
 
 contains('Notebook', items, function(result){
   console.log(result);
-})
+});
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
